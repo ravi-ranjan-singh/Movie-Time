@@ -58,6 +58,27 @@ class App extends Component {
     });
   }
 
+  async handleMovieNameSearch(name) {
+    let res = await (await fetch(
+      `http://www.omdbapi.com/?apikey=aa806481&t=${name}`
+    )).json();
+    await this.setState({
+      movie: {
+        title: res.Title,
+        genre: res.Genre,
+        director: res.Director,
+        actors: res.Actors,
+        plot: res.Plot,
+        language: res.Language,
+        country: res.Country,
+        awards: res.Awards,
+        img_url: res.Poster,
+        imdbRating: res.imdbRating,
+        production: res.Production
+      }
+    });
+  }
+
   async handleSearch(searchInput) {
     if (searchInput.trim() !== "") {
     }
@@ -107,6 +128,7 @@ class App extends Component {
               <Navbar
                 onSearch={this.handleSearch.bind(this)}
                 likedMovies={this.state.liked}
+                onSearchByName={this.handleMovieNameSearch.bind(this)}
                 {...props}
               />
             )}

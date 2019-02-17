@@ -2,6 +2,8 @@ import React from "react";
 import logo from "../Movie.png";
 
 const Navbar = props => {
+  const { onSearchByName } = props;
+
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -69,7 +71,7 @@ const Navbar = props => {
                       className="dropdown-item"
                       href="#"
                       onClick={() => {
-                        props.onSearch(movie);
+                        onSearchByName(movie);
                       }}
                     >
                       {movie}
