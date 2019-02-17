@@ -7,8 +7,19 @@ const Content = props => {
   return (
     <React.Fragment>
       <div className="row content">
-        <Route path="/" component={Search} />
         <Route
+          path="/"
+          render={Rprops => (
+            <Search
+              movies={props.movies}
+              onSearchById={props.onSearchById}
+              {...Rprops}
+            />
+          )}
+          exact
+        />
+        <Route
+          exact
           path="/movie/:id"
           render={Rprops => (
             <Movie

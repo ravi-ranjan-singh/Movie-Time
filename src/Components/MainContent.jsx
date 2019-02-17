@@ -1,7 +1,6 @@
 import React from "react";
 
 const MainContent = props => {
-  console.log(props);
   return (
     <div className="col-lg-8 col-sm-12 main-content">
       <div className="row">
