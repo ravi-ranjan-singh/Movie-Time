@@ -1,51 +1,50 @@
-body{
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Krub', sans-serif;
+  font-family: "Krub", sans-serif;
   background-color: dodgerblue;
 }
 
-.main{
+.main {
   padding-bottom: 50px;
   padding-top: 10vh;
 }
 
-.container{
+.container {
   background-color: #fff;
   width: 80%;
   border-radius: 5px;
   box-shadow: 5px 12px 5px 2px rgba(65, 61, 61, 0.2);
 }
 
-.navbar{
-  background-color: #000000!important;
+.navbar {
+  background-color: #000000 !important;
   color: white;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   width: 100%;
 }
 
-.navbar-brand{
+.navbar-brand {
   font-size: 40px;
-  font-family: 'Parisienne', cursive;
+  font-family: "Parisienne", cursive;
   color: dodgerblue;
   letter-spacing: 5px;
-  padding-left: 0px!important;
+  padding-left: 0px !important;
 }
 
-.navbar img{
+.navbar img {
   height: 60px;
   width: auto;
-  padding-right: 0px!important;
+  padding-right: 0px !important;
 }
 
-.form-control{
-  width: 350px!important;
+.form-control {
+  width: 350px !important;
 }
 
-
-.main-content{
+.main-content {
   background-color: rgb(65, 64, 64);
   padding-bottom: 2%;
   color: white;
@@ -53,7 +52,7 @@ body{
   text-align: center;
 }
 
-.foot{
+.foot {
   height: 15vh;
   background-color: #000000;
   color: #fff;
@@ -64,19 +63,20 @@ body{
   letter-spacing: 4px;
 }
 
-.poster .col-12,.data .col-12{
- padding: 0px!important;  
+.poster .col-12,
+.data .col-12 {
+  padding: 0px !important;
 }
 
-.secondary-content{
+.secondary-content {
   text-align: center;
 }
 
-.main-content .row{
-align-content: center
+.main-content .row {
+  align-content: center;
 }
 
-h1{
+h1 {
   text-align: center;
   text-transform: capitalize;
   letter-spacing: 2px;
@@ -84,47 +84,46 @@ h1{
   margin-bottom: 5%;
 }
 
-.main-content p{
+.main-content p {
   margin-bottom: 5%;
   letter-spacing: 2px;
   line-height: 40px;
-
 }
 
-.list-group{
+.list-group {
   height: 100%;
 }
 
-.list-item{
+.list-item {
   list-style: none;
   margin-top: 10%;
 }
 
-i{
+i {
   font-size: 40px;
 }
 
 .dropdown-toggle::after {
-  display:none!important;
+  display: none !important;
 }
 @media screen and (max-width: 1280px) {
-  .form-control{
-   margin-left: 100px!important;
+  .form-control {
+    margin-left: 100px !important;
   }
 }
 
 @media screen and (max-width: 1180px) {
-  .form-control{
-   width: auto!important;
-   margin-left: 100!important;
+  .form-control {
+    width: auto !important;
+    margin-left: 100 !important;
   }
 }
 
 @media screen and (max-width: 990px) {
-  .form-control{
-   margin-left: 0!important;
+  .form-control {
+    margin-left: 0 !important;
   }
-  .form-inline{
+  .form-inline {
     margin-top: 10px;
   }
 }
