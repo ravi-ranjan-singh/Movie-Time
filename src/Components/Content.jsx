@@ -7,6 +7,15 @@ const Content = props => {
   return (
     <React.Fragment>
       <div className="row content">
+        {props.err.length > 0 ? (
+          <React.Fragment>
+            <div className="col-1" />
+            <div className="alert alert-primary col-10 mt-4" role="alert">
+              {props.err}
+            </div>
+            <div className="col-1" />
+          </React.Fragment>
+        ) : null}
         <Route
           path="/"
           render={Rprops => (

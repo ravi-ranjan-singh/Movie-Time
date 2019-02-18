@@ -10,10 +10,10 @@ const Card = props => {
         props.onSearchById(props.movie.imdbID);
       }}
     >
-      <Link to={`/movie/${props.movie.imdbID}`}>
+      <Link to={`/movie/${props.movie.imdbID}`} className="link">
         <img src={src} className="card-img-top" alt="..." />
       </Link>
-      <Link to={`/movie/${props.movie.imdbID}`}>
+      <Link to={`/movie/${props.movie.imdbID}`} className="link">
         <div className="card-body">
           <h5 className="card-title">{props.movie.Title}</h5>
         </div>

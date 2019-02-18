@@ -5,6 +5,7 @@ import { Route } from "react-router-dom";
 class App extends Component {
   state = {
     SearchResult: [],
+    error: "",
     movie: {
       title: "",
       genre: "",
@@ -82,12 +83,37 @@ class App extends Component {
   async handleSearch(searchInput) {
     if (searchInput.trim() !== "") {
     }
+    const page = 1;
+    let newArr = [];
     let res = await (await fetch(
-      `http://www.omdbapi.com/?apikey=aa806481&s=${searchInput}`
+      `http://www.omdbapi.com/?apikey=aa806481&s=${searchInput}&page=${page}`
     )).json();
-    await this.setState({
-      SearchResult: [...res.Search]
-    });
+    const totalRes = Number(res.totalResults);
+    let count = Math.ceil(totalRes / 10);
+
+    for (let i = 1; i <= count; i++) {
+      let res = await (await fetch(
+        `http://www.omdbapi.com/?apikey=aa806481&s=${searchInput}&page=${i}`
+      )).json();
+      let newRes = Array.from(new Set(res.Search.map(JSON.stringify))).map(
+        JSON.parse
+      );
+      newRes.forEach(movie => {
+        newArr.push(movie);
+      });
+    }
+
+    console.log(newArr);
+    if (res.Response === "True") {
+      await this.setState({
+        SearchResult: [...newArr],
+        error: ""
+      });
+    } else {
+      await this.setState({
+        error: res.Error
+      });
+    }
   }
 
   handleLike = title => {
@@ -140,6 +166,7 @@ class App extends Component {
           likedMovies={this.state.liked}
           movies={this.state.SearchResult}
           onSearchById={this.handleMovie.bind(this)}
+          err={this.state.error}
         />
       </div>
     );

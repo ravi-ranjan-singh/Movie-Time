@@ -19,6 +19,19 @@ body {
   height: 400px !important;
 }
 
+.link {
+  text-decoration: none !important;
+  color: black;
+}
+
+.alert {
+  text-align: center;
+}
+
+.link:hover {
+  color: black;
+  font-weight: 700 !important;
+}
 .card-img-top {
   margin: 0px !important;
   height: 300px;
