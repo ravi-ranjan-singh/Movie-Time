@@ -111,7 +111,8 @@ class App extends Component {
       });
     } else {
       await this.setState({
-        error: res.Error
+        error: res.Error,
+        SearchResult: []
       });
     }
   }
