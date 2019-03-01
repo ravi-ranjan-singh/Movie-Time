@@ -40,7 +40,7 @@ class App extends Component {
 
   async handleMovie(searchID) {
     let res = await (await fetch(
-      `http://www.omdbapi.com/?apikey=aa806481&i=${searchID}`
+      `https://www.omdbapi.com/?apikey=aa806481&i=${searchID}`
     )).json();
     await this.setState({
       movie: {
@@ -61,7 +61,7 @@ class App extends Component {
 
   async handleMovieNameSearch(name) {
     let res = await (await fetch(
-      `http://www.omdbapi.com/?apikey=aa806481&t=${name}`
+      `https://www.omdbapi.com/?apikey=aa806481&t=${name}`
     )).json();
     await this.setState({
       movie: {
@@ -86,14 +86,14 @@ class App extends Component {
     const page = 1;
     let newArr = [];
     let res = await (await fetch(
-      `http://www.omdbapi.com/?apikey=aa806481&s=${searchInput}&page=${page}`
+      `https://www.omdbapi.com/?apikey=aa806481&s=${searchInput}&page=${page}`
     )).json();
     const totalRes = Number(res.totalResults);
     let count = Math.ceil(totalRes / 10);
 
     for (let i = 1; i <= count; i++) {
       let res = await (await fetch(
-        `http://www.omdbapi.com/?apikey=aa806481&s=${searchInput}&page=${i}`
+        `https://www.omdbapi.com/?apikey=aa806481&s=${searchInput}&page=${i}`
       )).json();
       let newRes = Array.from(new Set(res.Search.map(JSON.stringify))).map(
         JSON.parse
